@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var passport = require('passport');
 
-// csatlakozás a mongoDb(= adatbáziskezelő szoftver) auth nevű adatbázishoz
+// Csatlakozás a mongoDB, auth nevű adatbázisához.
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/auth');
 
@@ -18,9 +18,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-
-//passportból:
-app.use(require('express-session')({ secret: 'akármi', resave: true, saveUninitialized: true }));
+app.use(require('express-session')({ secret: 'little dad', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
