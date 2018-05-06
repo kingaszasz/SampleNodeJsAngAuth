@@ -1,0 +1,22 @@
+.container
+  h1 REGISTRATION
+  p Please fill out the form
+
+  form
+    .form-group
+      label(for='username') Username
+      input#username.form-control(name="username" type='text', aria-describedby='username', placeholder='Enter a username', [(ngModel)]="newUser.username")
+      small#usernameHelp.form-text.text-muted Username must be at least 3 chanarcters long, and must be unique
+    .form-group
+      label(for='email') Email address
+      input#email.form-control(name="email" type='email', aria-describedby='emailHelp', placeholder='Enter email', [(ngModel)]="newUser.email")
+      small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+    .form-group
+      label(for='address') Address
+      input#address.form-control(name="address" type='address', aria-describedby='address', placeholder='Enter your address', [(ngModel)]="newUser.address")
+    .form-group
+      label(for='password') Password
+      input#password.form-control(name="password" type='password', placeholder='Password', [(ngModel)]="newUser.password")
+  
+  
+    button.btn.btn-primary(type='submit', (click)="register()") Submit
